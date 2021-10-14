@@ -121,3 +121,7 @@ inside .eslintignore
 ```
 dist/main.js
 ```
+# Make a gh-pages:
+```
+git subtree push --prefix dist origin gh-pages
+```
