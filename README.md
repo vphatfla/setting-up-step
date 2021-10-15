@@ -1,6 +1,6 @@
 # setting-up-step
-##My setting up project repo
-####Setting up webpack 
+## My setting up project repo
+#### Setting up webpack 
 
 1. Setting up files
 ```
@@ -47,30 +47,12 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-      {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              ['@babel/preset-env', { targets: 'defaults' }],
-            ],
-            plugins: ['@babel/plugin-proposal-class-properties'],
-          },
-        },
-      },
     ],
   },
 };
 
 ```
-4. command setting babel-loader
-```
-npm install -D babel-loader @babel/core @babel/preset-env webpack
-
-```
-5. command setting css-loader
+4. command setting css-loader
 ```
 npm install --save-dev style-loader css-loader
 ```
@@ -121,6 +103,20 @@ inside .eslintignore
 ```
 dist/main.js
 ```
+### Set up Jest.
+1. Settup npm. // already has npm init
+```
+npm install --save-dev jest
+```
+2. file *.test.js // with import export
+3. inside package.json:
+```
+"scripts": {
+  ...
+  "test": "jest",
+  "watch": "jest --watch *sum.test.js"
+},
+ ``` 
 # Make a gh-pages:
 ```
 git subtree push --prefix dist origin gh-pages
