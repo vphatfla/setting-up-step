@@ -31,7 +31,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: ['./src/index.js'],
   devtool: 'inline-source-map',
   output: {
     filename: 'main.js',
@@ -47,9 +47,14 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 };
+
 
 ```
 4. command setting css-loader
@@ -67,13 +72,14 @@ npm install eslint --save-dev
 ```
 3. select
 ```
-To check syntax and find problems
-CommonJS
+... enforce styles
+CommonJS / javascript
 None of these
 No
 Browser
 Use the popular
 Airbnb
+file in JS
 ```
 4. customize .eslint.js
 ```
